@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+dein-options-hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]] # コメントアウト・解除
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]] # ステータスライン改造
+repo = 'itchyny/lightline.vim'
+
+[[plugins]] # バッファをタブラインに表示 with lightline
+repo = 'taohexxx/lightline-buffer'
+
+[[plugins]] # 末尾空白の強調・自動削除
+repo = 'ntpeters/vim-better-whitespace'
+
+[[plugins]] # 全角空白の強調
+repo = 'thinca/vim-zenspace'

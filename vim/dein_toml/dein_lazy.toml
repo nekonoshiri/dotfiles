@@ -1,0 +1,63 @@
+[[plugins]] # sayonara!
+repo = 'mhinz/vim-sayonara'
+on_cmd = 'Sayonara'
+
+[[plugins]] # haskell
+repo = 'neovimhaskell/haskell-vim'
+on_ft = 'haskell'
+
+[[plugins]] # Idris
+repo = 'idris-hackers/idris-vim'
+on_ft = 'idris'
+
+[[plugins]] # F sharp
+repo = 'kongo2002/fsharp-vim'
+on_ft = 'fsharp'
+
+[[plugins]] # import 文のソート
+repo = 'itchyny/vim-haskell-sort-import'
+on_ft = 'haskell'
+
+[[plugins]] # scala
+repo = 'derekwyatt/vim-scala'
+on_ft = 'scala'
+
+[[plugins]] # go
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]] # solidity
+repo = 'tomlion/vim-solidity'
+on_ft = 'solidity'
+
+[[plugins]] # better javascript
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
+
+[[plugins]] # jsx
+repo = 'chemzqm/vim-jsx-improve'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]] # dart
+repo = 'dart-lang/dart-vim-plugin'
+on_ft = 'dart'
+
+[[plugins]] # coffeescript
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]] # typescript
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]] # purescript
+repo = 'raichoo/purescript-vim'
+on_ft = 'purescript'
+
+[[plugins]] # fishscript
+repo = 'dag/vim-fish'
+on_ft = 'fish'
+
+[[plugins]] # TOML
+repo = 'cespare/vim-toml'
+on_ft = 'toml'

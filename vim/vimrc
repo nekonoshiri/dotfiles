@@ -1,0 +1,144 @@
+" vim 設定ファイル
+
+" vim encoding
+if has('win32') || has ('win64')
+  set encoding=cp932
+  set termencoding=cp932
+else
+  set encoding=utf-8
+  set termencoding=utf-8
+endif
+
+scriptencoding utf-8
+
+" 一旦ファイルタイプ関連を無効化する
+filetype off
+filetype plugin indent off
+
+" シンタックスハイライトを有効化
+if !exists("g:syntax_on")
+  syntax enable
+endif
+
+" vi 互換動作無効
+if &compatible
+  set nocompatible
+endif
+
+" runtimepath に このフォルダを追加
+set runtimepath+=~/dotfiles/vim
+
+" neovim と共通の設定を読み込み（runtimepath からの相対）
+runtime config/common.vim
+
+""""""""""
+" encoding
+""""""""""
+
+" 書き込み encoding
+set fileencoding=utf-8
+" 読み込み encoding
+set fileencodings=utf-8,cp932,sjis,euc-jp,iso-2022-jp
+
+""""""""""
+" display
+""""""""""
+
+set showcmd " 入力中のコマンド
+set showmatch " 対応する括弧
+set matchtime=1
+set display=lastline "長い行の表示
+set laststatus=2 " 常にステータスラインを表示
+
+""""""""""
+" indent
+""""""""""
+
+set autoindent " 自動インデント
+
+""""""""""
+" backups
+""""""""""
+
+set swapfile " スワップファイルを作る
+set noundofile " アンドゥファイルを作らない
+
+set backup " バックアップを残す
+set backupdir=~/.vim/vimbackup
+
+""""""""""
+" viminfo
+""""""""""
+
+" viminfo ファイルに 1000 行までヤンクを保存
+set viminfo+=\"1000
+" viminfo ファイル出力先
+set viminfo+=n~/.vim/viminfo
+
+""""""""""
+" search & replace
+""""""""""
+
+set incsearch " インクリメンタル検索
+set wrapscan " 最後尾から先頭に戻る
+set hlsearch " 検索結果をハイライト
+
+""""""""""
+" other
+""""""""""
+
+set modeline " モードライン
+set history=10000 " 入力コマンドの履歴保持数
+set backspace=indent,eol,start " 挿入モードに入る前の文字を消せるようにする
+
+""""""""""
+" for windows
+""""""""""
+
+if has('win32') || has ('win64')
+  behave mswin " windows ショートカット等を使えるようにする
+  set iminsert=0 " 挿入モードと検索モードで IME オフ
+  set imsearch=-1
+endif
+
+""""""""""
+" dein
+""""""""""
+
+" dein の場所
+let s:dein_dir = expand('~/.vim/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+" プラグイン記述ファイルの場所
+let s:toml_dir = expand('~/dotfiles/vim/dein_toml')
+let s:toml = s:toml_dir . '/dein.toml'
+let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+
+" dein が runtimepath になければ追加，更に dein 本体がなければ git clone
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute "set runtimepath+=" . fnamemodify(s:dein_repo_dir, ':p')
+endif
+
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  call dein#load_toml(s:toml, {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#end()
+  call dein#save_state()
+endif
+
+""""""""""
+" 末尾に置く設定
+""""""""""
+
+" ファイルタイプ関連を再び有効にする
+filetype plugin indent on
+
+" 未インストールのプラグインのチェック
+if dein#check_install()
+  call dein#install()
+endif
+
