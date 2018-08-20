@@ -88,28 +88,24 @@ cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'WQ' : 'wq')<CR>
 " command! -bar -bang Qall qall<bang>
 
 """"""""""
-" vim-lightline
-" lightline-buffer
+" lightline-bufferline
 """"""""""
 
-" lightline-buffer の設定
 let g:lightline = {
 \   'tabline': {
-\     'left': [['bufferinfo'], ['bufferbefore', 'buffercurrent', 'bufferafter']],
+\     'left': [['buffers']],
 \     'right': [],
 \   },
 \   'component_expand': {
-\     'buffercurrent': 'lightline#buffer#buffercurrent2',
+\     'buffers': 'lightline#bufferline#buffers',
 \   },
 \   'component_type': {
-\     'buffercurrent': 'tabsel',
-\   },
-\   'component_function': {
-\     'bufferbefore': 'lightline#buffer#bufferbefore',
-\     'bufferafter': 'lightline#buffer#bufferafter',
-\   'bufferinfo': 'lightline#buffer#bufferinfo',
-\   },
+\     'buffers': 'tabsel',
+\   }
 \ }
+
+let g:lightline#bufferline#show_number = 1
+let g:lightline#bufferline#unnamed = '[No Name]'
 
 """"""""""
 " vim-better-whitespace

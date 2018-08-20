@@ -22,8 +22,8 @@ repo = 'tomtom/tcomment_vim'
 [[plugins]] # ステータスライン改造
 repo = 'itchyny/lightline.vim'
 
-[[plugins]] # バッファをタブラインに表示 with lightline
-repo = 'taohexxx/lightline-buffer'
+[[plugins]] # バッファを lightline に表示
+repo = 'mgee/lightline-bufferline'
 
 [[plugins]] # 末尾空白の強調・自動削除
 repo = 'ntpeters/vim-better-whitespace'
