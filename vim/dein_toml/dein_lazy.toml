@@ -1,31 +1,3 @@
-#---------
-# deoplete
-#---------
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = '''has('python3')'''
-if = '''has('timers')'''
-hook_add = 'let g:deoplete#enable_at_startup = 1'
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-if = '''!has('nvim')'''
-on_source = ['deoplete']
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if = '''!has('nvim')'''
-on_source = ['deoplete']
-
-[[plugins]] # syntax ファイルを見ていい感じに補完する
-repo = 'Shougo/neco-syntax'
-on_source = ['deoplete']
-
-#---------
-# その他
-#---------
-
 [[plugins]] # sayonara!
 repo = 'mhinz/vim-sayonara'
 on_cmd = 'Sayonara'
