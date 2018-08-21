@@ -18,6 +18,10 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '''!has('nvim')'''
 on_source = ['deoplete']
 
+[[plugins]] # syntax ファイルを見ていい感じに補完する
+repo = 'Shougo/neco-syntax'
+on_source = ['deoplete']
+
 #---------
 # その他
 #---------
@@ -25,6 +29,13 @@ on_source = ['deoplete']
 [[plugins]] # sayonara!
 repo = 'mhinz/vim-sayonara'
 on_cmd = 'Sayonara'
+hook_add = '''
+  command! -bar -nargs=* -complete=file -range=% -bang WQ
+    \ <line1>,<line2>write<bang> <args> | :Sayonara
+  command! -bar Q :Sayonara
+  cabbrev q <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'Q' : 'q')<CR>
+  cabbrev wq <c-r>=(getcmdtype()==':' && getcmdpos()==1 ? 'WQ' : 'wq')<CR>
+'''
 
 [[plugins]] # haskell
 repo = 'neovimhaskell/haskell-vim'

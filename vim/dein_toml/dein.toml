@@ -24,9 +24,27 @@ repo = 'itchyny/lightline.vim'
 
 [[plugins]] # バッファを lightline に表示
 repo = 'mgee/lightline-bufferline'
+hook_add = '''
+  let g:lightline = {
+  \   'tabline': {
+  \     'left': [['buffers']],
+  \     'right': [],
+  \   },
+  \   'component_expand': {
+  \     'buffers': 'lightline#bufferline#buffers',
+  \   },
+  \   'component_type': {
+  \     'buffers': 'tabsel',
+  \   }
+  \ }
+
+  let g:lightline#bufferline#show_number = 1
+  let g:lightline#bufferline#unnamed = '[No Name]'
+'''
 
 [[plugins]] # 末尾空白の強調・自動削除
 repo = 'ntpeters/vim-better-whitespace'
+hook_add = 'autocmd BufEnter * EnableStripWhitespaceOnSave'
 
 [[plugins]] # 全角空白の強調
 repo = 'thinca/vim-zenspace'
