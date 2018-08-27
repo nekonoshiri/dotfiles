@@ -21,6 +21,10 @@ on_ft = 'idris'
 repo = 'kongo2002/fsharp-vim'
 on_ft = 'fsharp'
 
+[[plugins]] # elixir
+repo = 'elixir-editors/vim-elixir'
+on_ft = 'elixir'
+
 [[plugins]] # import 文のソート
 repo = 'itchyny/vim-haskell-sort-import'
 on_ft = 'haskell'
