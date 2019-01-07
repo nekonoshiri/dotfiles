@@ -49,6 +49,10 @@ hook_add = 'autocmd BufEnter * EnableStripWhitespaceOnSave'
 [[plugins]] # 全角空白の強調
 repo = 'thinca/vim-zenspace'
 
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+if = '''has('python3')'''
+
 #---------
 # deoplete
 #---------
