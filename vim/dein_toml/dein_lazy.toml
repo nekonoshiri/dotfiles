@@ -33,6 +33,10 @@ on_ft = 'haskell'
 repo = 'derekwyatt/vim-scala'
 on_ft = 'scala'
 
+[[plugins]] # kotlin
+repo = 'udalov/kotlin-vim'
+on_ft = 'kotlin'
+
 [[plugins]] # go
 repo = 'fatih/vim-go'
 on_ft = 'go'
