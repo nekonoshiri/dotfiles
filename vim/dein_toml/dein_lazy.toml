@@ -73,6 +73,10 @@ on_ft = 'purescript'
 repo = 'dag/vim-fish'
 on_ft = 'fish'
 
+[[plugins]] # GraphQL
+repo = 'jparise/vim-graphql'
+on_ft = 'graphql'
+
 [[plugins]] # TOML
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
