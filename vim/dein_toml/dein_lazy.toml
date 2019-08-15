@@ -17,6 +17,10 @@ on_ft = 'haskell'
 repo = 'idris-hackers/idris-vim'
 on_ft = 'idris'
 
+[[plugins]] # Elm
+repo = 'elmcast/elm-vim'
+on_ft = 'elm'
+
 [[plugins]] # F sharp
 repo = 'kongo2002/fsharp-vim'
 on_ft = 'fsharp'
