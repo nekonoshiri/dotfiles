@@ -53,6 +53,9 @@ repo = 'thinca/vim-zenspace'
 repo = 'editorconfig/editorconfig-vim'
 if = '''has('python3')'''
 
+[[plugins]] # Collection of language packs
+repo = 'sheerun/vim-polyglot'
+
 #---------
 # deoplete
 #---------
