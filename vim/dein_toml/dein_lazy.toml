@@ -45,6 +45,13 @@ on_ft = 'kotlin'
 repo = 'fatih/vim-go'
 on_ft = 'go'
 
+[[plugins]] # python black
+repo = 'psf/black'
+on_ft ='python'
+hook_add = '''
+  autocmd BufWritePre *.py execute ':Black'
+'''
+
 [[plugins]] # solidity
 repo = 'tomlion/vim-solidity'
 on_ft = 'solidity'
