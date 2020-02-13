@@ -81,6 +81,10 @@ on_ft = 'fish'
 repo = 'jparise/vim-graphql'
 on_ft = 'graphql'
 
+[[plugins]] # nginx
+repo = 'chr4/nginx.vim'
+on_ft = 'nginx'
+
 [[plugins]] # TOML
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
