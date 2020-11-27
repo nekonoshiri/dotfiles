@@ -52,6 +52,13 @@ hook_add = '''
   autocmd BufWritePre *.py execute ':Black'
 '''
 
+[[plugins]] # python isort
+repo = 'fisadev/vim-isort'
+on_ft ='python'
+hook_add = '''
+  autocmd BufWritePre *.py execute ':Isort'
+'''
+
 [[plugins]] # solidity
 repo = 'tomlion/vim-solidity'
 on_ft = 'solidity'
