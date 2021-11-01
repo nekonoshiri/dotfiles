@@ -52,6 +52,15 @@ noremap <expr> <C-y> (line('w0') <= 1 ? 'k' : "\<C-y>")
 noremap <expr> <C-e> (line('w$') >= line('$') ? 'j' : "\<C-e>")
 
 """"""""""
+" Provider settings
+""""""""""
+let g:python3_host_prog = '/usr/bin/python3'
+let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
+
+""""""""""
 " other
 """"""""""
 
